@@ -3,9 +3,8 @@ import { Form, Button, Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
 
-export default function Login() {
+export default function ForgotPassword() {
     const emailRef = useRef()
-    const passwordRef = useRef()
     const { login } = useAuth()
     const [ error, setError ] = useState('')
     const [ loading, setLoading ] = useState(false)
@@ -18,7 +17,7 @@ export default function Login() {
         try {
             setError('')
             setLoading(true)
-            await login(emailRef.current.value, passwordRef.current.value)
+            /* await login(emailRef.current.value, passwordRef.current.value) */
             history.push('/')
         }   catch{
             setError('Mot de passe incorret')
@@ -31,21 +30,17 @@ export default function Login() {
         <>
             <Card>
                 <Card.Body>
-                    <h2 className="text-center mb-4">Connexion</h2>
+                    <h2 className="text-center mb-4">Réinitialisation du mot de passe</h2>
                     {error && <Alert variant="danger">{error}</Alert>}
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3" id="email">
                             <Form.Label>Email</Form.Label>
                             <Form.Control type="email" ref={emailRef} required/>
                         </Form.Group>
-                        <Form.Group className="mb-3" id="password">
-                            <Form.Label>Mot de passe</Form.Label>
-                            <Form.Control type="password" ref={passwordRef} required/>
-                        </Form.Group>
-                        <Button disable={loading} className="w-100 mb-3" type="Submit">Se connecter</Button>
+                        <Button disable={loading} className="w-100 mb-3" type="Submit">Réinitialiser mot de passe</Button>
                     </Form>
                     <div className="w-100 text-center mt-3">
-                        <Link to="/forgot-password">Mot de passe oublié ?</Link>
+                        <Link to="/login">Se connecter</Link>
                     </div>
                 </Card.Body>
             </Card>

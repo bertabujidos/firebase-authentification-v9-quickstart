@@ -23,7 +23,7 @@ export default function Signup() {
             setError('')
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
-            history.push("/")
+            history.push('/')
         }   catch{
             setError('Échec lors de la création du compte ')
         }
@@ -36,7 +36,7 @@ export default function Signup() {
             <Card>
                 <Card.Body>
                     <h2 className="text-center mb-4">Inscription</h2>
-                    {error && <Alert variant='danger'>{error}</Alert>}
+                    {error && <Alert variant="danger">{error}</Alert>}
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3" id="email">
                             <Form.Label>Email</Form.Label>
