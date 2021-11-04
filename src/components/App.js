@@ -3,8 +3,9 @@ import Login from './Login';
 import Dashboard from './Dashboard';
 import { Container } from 'react-bootstrap'
 import { AuthProvider } from "../contexts/AuthContext";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, } from 'react-router-dom'
 import PrivateRoute from './PrivateRoute';
+import PublicRouteOnly from './PublicRouteOnly';
 import ForgotPassword from './ForgotPassword';
 import UpdateProfile from './UpdateProfile';
 
@@ -21,9 +22,9 @@ function App() {
               <Switch>
                 <PrivateRoute exact path="/" component={Dashboard} />
                 <PrivateRoute path="/update-profile" component={UpdateProfile} />
-                <Route path="/signup" component={Signup} />
-                <Route path="/login" component={Login} />
-                <Route path="/forgot-password" component={ForgotPassword} />
+                <PublicRouteOnly path="/signup" component={Signup} />
+                <PublicRouteOnly path="/login" component={Login} />
+                <PublicRouteOnly path="/forgot-password" component={ForgotPassword} />
               </Switch>
             </AuthProvider>
           </Router>

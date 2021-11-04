@@ -41,6 +41,8 @@ export function AuthProvider({ children }) {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setCurrentuser(user)
+            } else {
+                setCurrentuser(user)
             }
             setLoading(false)
         })
