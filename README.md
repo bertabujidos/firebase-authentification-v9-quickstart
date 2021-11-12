@@ -1,4 +1,4 @@
-# Everything you need to start use Firebase Authentification V9
+# Everything you need to start using Firebase Authentification V9
 
 This project was inspired by Web Dev Simplified on Youtube.
 
