@@ -2,6 +2,8 @@
 
 This project was inspired by Web Dev Simplified on Youtube which made a tutorial about Firebase V8. So I updated it for Firebase V9 and I added some cool features like auto-redirect when user is logged in and trying to access login page.
 
+Perfect to quickstart any new project which need user authentification !
+
 ## How to use
 
 The only thing you have to do is create a .env.local file with your Firebase credentials in your project directory.
