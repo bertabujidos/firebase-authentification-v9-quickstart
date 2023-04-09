@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react'
-import { Form, Button, Card, Alert } from 'react-bootstrap'
+import { Form, Button, Card, Alert, FloatingLabel } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import { Link } from 'react-router-dom'
 
@@ -35,10 +35,9 @@ export default function ForgotPassword() {
                     {error && <Alert variant="danger">{error}</Alert>}
                     {message && <Alert variant="success">{message}</Alert>}
                     <Form onSubmit={handleSubmit}>
-                        <Form.Group className="mb-3" id="email">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" ref={emailRef} required/>
-                        </Form.Group>
+                        <FloatingLabel controlId="floatinginput" label="Email" className="mb-3">
+                            <Form.Control type="email" placeholder="Email" ref={emailRef} required/>
+                        </FloatingLabel>
                         <Button disable={loading} className="w-100 mb-3" type="Submit">Réinitialiser mot de passe</Button>
                     </Form>
                     <div className="w-100 text-center mt-3">

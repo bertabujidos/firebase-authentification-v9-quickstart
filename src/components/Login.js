@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react'
-import { Form, Button, Card, Alert } from 'react-bootstrap'
+import { Form, Button, Card, Alert, FloatingLabel } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
 
@@ -34,14 +34,12 @@ export default function Login() {
                     <h2 className="text-center mb-4">Connexion</h2>
                     {error && <Alert variant="danger">{error}</Alert>}
                     <Form onSubmit={handleSubmit}>
-                        <Form.Group className="mb-3" id="email">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" ref={emailRef} required/>
-                        </Form.Group>
-                        <Form.Group className="mb-3" id="password">
-                            <Form.Label>Mot de passe</Form.Label>
-                            <Form.Control type="password" ref={passwordRef} required/>
-                        </Form.Group>
+                        <FloatingLabel controlId="floatingInput" label="Email" className="mb-3">
+                            <Form.Control type="email" placeholder="Email" ref={emailRef} required/>
+                        </FloatingLabel>
+                        <FloatingLabel controlId="floatingPassword" label="Password" className="mb-3">
+                            <Form.Control type="password" placeholder="Password" ref={passwordRef} required/>
+                        </FloatingLabel>
                         <Button disable={loading} className="w-100 mb-3" type="Submit">Se connecter</Button>
                     </Form>
                     <div className="w-100 text-center mt-3">
