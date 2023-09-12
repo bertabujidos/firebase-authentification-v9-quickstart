@@ -31,7 +31,7 @@ export default function Login() {
         <>
             <Card>
                 <Card.Body>
-                    <h2 className="text-center mb-4">Connexion</h2>
+                    <h2 className="text-center mb-4">SSL FOR SAAS</h2>
                     {error && <Alert variant="danger">{error}</Alert>}
                     <Form onSubmit={handleSubmit}>
                         <FloatingLabel controlId="floatingInput" label="Email" className="mb-3">
@@ -43,12 +43,12 @@ export default function Login() {
                         <Button disable={loading} className="w-100 mb-3" type="Submit">Se connecter</Button>
                     </Form>
                     <div className="w-100 text-center mt-3">
-                        <Link to="/forgot-password">Mot de passe oublié ?</Link>
+                        <Link to="/forgot-password">Forgot your password?</Link>
                     </div>
                 </Card.Body>
             </Card>
             <div className="w-100 text-center mt-2">
-                Pas encore de compte ? <Link to="/signup">S'inscire</Link>
+                Don't have an account yet? <Link to="/signup">Sign up</Link>
             </div>
         </>
     )
